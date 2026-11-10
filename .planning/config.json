@@ -1,0 +1,10 @@
+{
+  "mode": "yolo",
+  "granularity": "coarse",
+  "commit_docs": false,
+  "workflow": {
+    "research": false,
+    "plan_check": false,
+    "verifier": false
+  }
+}
