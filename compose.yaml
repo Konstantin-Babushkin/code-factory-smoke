@@ -1,0 +1,15 @@
+services:
+  web:
+    image: busybox:1.37
+    command: ["httpd", "-f", "-p", "8080", "-h", "/site"]
+    volumes:
+      - type: bind
+        source: ./site
+        target: /site
+        read_only: true
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:8080/"]
+      interval: 2s
+      timeout: 2s
+      retries: 5
+      start_period: 1s
