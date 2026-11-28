@@ -2,6 +2,8 @@ services:
   web:
     image: busybox:1.37
     command: ["httpd", "-f", "-p", "8080", "-h", "/site"]
+    expose:
+      - "8080"
     volumes:
       - type: bind
         source: ./site
